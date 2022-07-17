@@ -83,4 +83,4 @@ Route::any('/oauth/callback/{provider}', function ($provider) use ($providers) {
     Auth::login($user);
 
     return redirect(session()->get('login-referrer', \route(config('navigation.home'))));
-});
+})->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
