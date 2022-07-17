@@ -30,7 +30,7 @@ Route::any('/oauth/callback/{provider}', function ($provider) use ($providers) {
         } else {
             $user = \App\Models\User::firstOrNew([
                 "email" => $social->getEmail(),
-                "name" => $social->getName(),
+                "name" => $social->getName() ?? $social->getEmail(),
             ]);
 
             $user->password = bcrypt(\Illuminate\Support\Str::random());
