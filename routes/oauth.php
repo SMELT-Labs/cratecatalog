@@ -12,7 +12,7 @@ Route::get('/oauth/redirect/{provider}', function ($provider) use ($providers) {
     return Socialite::driver($provider)->redirect();
 });
 
-Route::get('/oauth/callback/{provider}', function ($provider) use ($providers) {
+Route::any('/oauth/callback/{provider}', function ($provider) use ($providers) {
     abort_unless($providers->has($provider), 404);
     $social = Socialite::driver($provider)->user();
 
