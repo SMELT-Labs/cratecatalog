@@ -16,7 +16,7 @@ Route::any('/oauth/callback/{provider}', function ($provider) use ($providers) {
     abort_unless($providers->has($provider), 404);
     $social = Socialite::driver($provider)->user();
 
-    dd($social);
+//    dd($social);
 
     $user = null;
 
