@@ -59,12 +59,14 @@ class Box extends Resource
             Panel::make('Media', [
                 Image::make('Header')
                     ->help('A banner image for the box company.')
+                    ->store($this->handleStorage('/headers', 'header'))
                     ->preview($this->handleImage())
                     ->thumbnail($this->handleImage())
                     ->required(),
 //
                 Image::make('Logo')
                     ->help('The box company\'s logo.')
+                    ->store($this->handleStorage('/logos', 'logo'))
                     ->preview($this->handleImage())
                     ->thumbnail($this->handleImage())
                     ->required(),

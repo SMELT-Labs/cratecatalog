@@ -29,6 +29,7 @@
         "laravel/scout": "^9.4",
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.7",
+        "league/flysystem-aws-s3-v3": "^3.0",
         "meilisearch/meilisearch-php": "^0.24.0",
         "paquettg/php-html-parser": "^3.1",
         "socialiteproviders/apple": "^5.2",

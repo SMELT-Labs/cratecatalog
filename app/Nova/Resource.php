@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
 
@@ -67,5 +68,24 @@ abstract class Resource extends NovaResource
             static function () use ($icon) {
                 return url($icon);
             };
+    }
+
+    public function handleStorage(string $folder, string $image = 'image')
+    {
+        return function ($request) use ($folder, $image) {
+            $file = $request->$image;
+            $ext = $file->extension();
+            $filename = hash('sha256', $this->name.now()).".$ext";
+            $location = Storage::putFileAs($folder, $file, $filename, [
+                "visibility" => "public"
+            ]);
+            request()->$image = $location;
+//            request()->$icon = env('DO_SPACES_SUBDOMAIN').'/'.Storage::disk('spaces')
+//                    ->putFileAs($folder, $file, hash('sha256', $this->name.now()).".$ext", ['visibility' => 'public']);
+
+            return [
+                $image => request()->$image,
+            ];
+        };
     }
 }

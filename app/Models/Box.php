@@ -71,15 +71,28 @@ class Box extends Model
         );
     }
 
+    public function imgixCast($field, $width, $height) {
+        return Attribute::make(
+            get: function ($value, $attr) use ($field, $width, $height) {
+                return isset($attr[$field]) ? imgix(Storage::url($attr[$field]), [
+                    'h' => $height,
+                    'w' => $width,
+                    'fit' => 'crop',
+                    'crop' => 'focalpoint',
+                    'auto' => 'format,compress,enhance',
+                ]) : null;
+            }
+        );
+    }
+
     public function header() : Attribute {
-        return $this->storageCast('header');
+        return $this->imgixCast('header', 450, 300);
     }
 
     public function logo() : Attribute {
-//        $this->header()->
-        return $this->storageCast('logo');
+        return $this->imgixCast('logo', 100, 100);
     }
-//
+
 //    public function price() : Attribute {
 //        return Attribute::make(
 //            get: function ($value, $attr) {
