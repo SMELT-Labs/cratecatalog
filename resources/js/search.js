@@ -17,7 +17,7 @@ window.instantsearch = instantsearch
 window.search = instantsearch({
     indexName: 'boxes',
     searchClient: instantMeiliSearch(
-        'https://165.227.85.27',
+        import.meta.env.VITE_MEILISEARCH_HOST,
         '8f3b1fa21c58a8278e940c80694866b863defb7e5ecafd4b323d21758885316d'
     ),
     searchFunction(helper) {

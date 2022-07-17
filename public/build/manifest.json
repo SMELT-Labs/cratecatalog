@@ -8,7 +8,7 @@
     ]
   },
   "resources/js/search.js": {
-    "file": "assets/search.7beac7a2.js",
+    "file": "assets/search.8c31481e.js",
     "src": "resources/js/search.js",
     "isEntry": true,
     "imports": [
@@ -19,7 +19,7 @@
     "file": "assets/_commonjsHelpers.4e997714.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app.d8cab4a7.css",
+    "file": "assets/app.b400b43a.css",
     "src": "resources/css/app.css",
     "isEntry": true
   }
