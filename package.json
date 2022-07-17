@@ -1,0 +1,38 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "vite",
+        "watch": "vite watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "vite build"
+    },
+    "devDependencies": {
+        "@inertiajs/inertia": "^0.11.0",
+        "@inertiajs/inertia-vue3": "^0.6.0",
+        "@inertiajs/progress": "^0.2.7",
+        "@tailwindcss/aspect-ratio": "^0.4.0",
+        "@tailwindcss/forms": "^0.5.2",
+        "@tailwindcss/typography": "^0.5.4",
+        "@vitejs/plugin-react": "^1.3.2",
+        "@vitejs/plugin-vue": "^2.3.3",
+        "alpinejs": "^3.4.2",
+        "autoprefixer": "^10.4.2",
+        "axios": "^0.21",
+        "instantsearch.js": "^4.43.0",
+        "laravel-mix": "^6.0.6",
+        "laravel-vite-plugin": "^0.3.0",
+        "lodash": "^4.17.19",
+        "postcss": "^8.4.6",
+        "tailwindcss": "^3.1.0",
+        "vite": "^2.9.14",
+        "vue": "^3.2.31"
+    },
+    "dependencies": {
+        "@meilisearch/instant-meilisearch": "^0.7.1",
+        "shiki": "^0.10.1",
+        "vue-instantsearch": "^4.4.0"
+    }
+}

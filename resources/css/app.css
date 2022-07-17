@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.ribbon-sm {
+    @apply pl-6 pr-3;
+}
+
+.ribbon-sm.shadow {
+    box-shadow: 3px 2px 3px -3px black;
+}
+
+.ribbon-sm:before {
+    content: "";
+    border-bottom: 12px solid transparent;
+    border-left: 6px solid #fff;
+    border-top: 12px solid transparent;
+    bottom: 0;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
