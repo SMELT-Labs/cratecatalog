@@ -62,7 +62,7 @@ class Box extends Resource
                     ->preview($this->handleImage())
                     ->thumbnail($this->handleImage())
                     ->required(),
-
+//
                 Image::make('Logo')
                     ->help('The box company\'s logo.')
                     ->preview($this->handleImage())

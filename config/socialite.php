@@ -29,8 +29,9 @@ return [
 //        'icon' => 'twitter',
 //        'client_id' => env('SOCIALITE_TWITTER_CLIENT'),
 //        'client_secret' => env('SOCIALITE_TWITTER_SECRET'),
-//        'redirect' => env('APP_URL') . '/oauth/callback/twitter',
-//        'oauth' => 2,
+//        'redirect' => '',
+////        'redirect' => env('APP_URL') . '/oauth/callback/twitter',
+//        'oauth' => 1,
 //        "colorClass" => [
 //            "bg-[#1da1f2] text-white"
 //        ]

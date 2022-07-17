@@ -50,6 +50,11 @@ class Box extends Model
         return 'slug';
     }
 
+    public function searchableAs()
+    {
+        return config('app.env') . '_boxes';
+    }
+
 //    public function getRenderAttribute() {
 //        return View::make('components.box', ["box" => $this])->render();
 //    }
@@ -61,7 +66,7 @@ class Box extends Model
     private function storageCast($field) {
         return Attribute::make(
             get: function ($value, $attr) use ($field) {
-                return Storage::url($attr[$field]);
+                return isset($attr[$field]) ? Storage::url($attr[$field]) : null;
             }
         );
     }

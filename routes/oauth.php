@@ -9,14 +9,17 @@ $providers = collect(config('socialite'));
 Route::get('/oauth/redirect/{provider}', function ($provider) use ($providers) {
     abort_unless($providers->has($provider), 404);
     session()->flash('login-referrer', request()->headers->get('referer'));
-    return Socialite::driver($provider)->redirect();
+    return Socialite::driver($provider)
+//        ->scopes(['include_email'])
+            ->with(["include_email" => true])
+        ->redirect();
 });
 
 Route::any('/oauth/callback/{provider}', function ($provider) use ($providers) {
     abort_unless($providers->has($provider), 404);
     $social = Socialite::driver($provider)->user();
 
-//    dd($social);
+    dd($social);
 
     $user = null;
 
