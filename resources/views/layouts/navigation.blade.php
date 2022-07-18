@@ -4,14 +4,14 @@
         <div class="flex justify-between h-16">
             <div class="flex items-center flex-grow">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center mr-3">
+                <div class="shrink-0 flex items-center mr-6 sm:mr-0">
                     <a href="{{ route(config('navigation.home')) }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:mx-10 sm:flex">
                     @foreach(config('navigation.header') as $nav)
                         <x-nav-link :href="route(str($nav)->lower()->toString())" :active="request()->routeIs(str($nav)->lower()->toString)">
                             {{ __($nav) }}
@@ -54,7 +54,7 @@
                     </x-dropdown>
                 </div>
             @else
-                <div class="flex items-center ml-3">
+                <div class="hidden sm:flex items-center ml-3">
                     <a href="{{ route('login') }}" class="w-10 h-10 rounded-full bg-white hover:text-blue-500 @aspect(1,1) relative flex items-center justify-center border-black border border-1 overflow-hidden" title="Login">
                         <i class="fas text-xl fa-arrow-right-to-arc absolute flex items-center justify-center"></i>
                     </a>
@@ -63,7 +63,7 @@
             @endauth
 
             <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
+            <div class="-mr-2 flex items-center sm:hidden ml-3">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -82,6 +82,25 @@
                     {{ __($nav) }}
                 </x-responsive-nav-link>
             @endforeach
+            @auth
+                <form method="POST" action="{{ route('logout') }}" class="m-0">
+                    @csrf
+                    <x-responsive-nav-link :href="route('logout')" :active="request()->routeIs('logout')" onclick="event.preventDefault();
+                                                        this.closest('form').submit();">
+                            <div class="flex items-center justify-between relative text-red-400">
+                                {{ __('Logout') }}
+                                <i class="fas text-xl fa-arrow-right-from-arc flex items-center justify-center"></i>
+                            </div>
+                    </x-responsive-nav-link>
+                </form>
+            @else
+                <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                    <div class="flex items-center justify-between relative">
+                        {{ __('Login') }}
+                        <i class="fas text-xl fa-arrow-right-to-arc flex items-center justify-center"></i>
+                    </div>
+               </x-responsive-nav-link>
+            @endauth
         </div>
 
     </div>
