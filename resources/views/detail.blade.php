@@ -21,22 +21,14 @@
 {{--            {{ $box->name }}--}}
 {{--        </div>--}}
 
-        <div class="mt-8 lg:prose-xl prose text-center">
-            <h1 class=" font-bold">
-                {{ $box->name }}
-            </h1>
-            <div class="-mt-12">
-                <h2 class="text-gray-500">{{ $box->short }}</h2>
-            </div>
-        </div>
+
 
         <div class="lg:-mx-16 mx-0">
-            <div class="mt-16 w-full rounded-[2rem] overflow-hidden @aspect(4,2) bg-gray-200 relative">
+            <div class="mt-8 w-full rounded-[2rem] overflow-hidden @aspect(4,2) bg-gray-200 relative">
                 <img class="object-cover" src="{{ $box->header }}" alt="">
                 <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-transparent"></div>
             </div>
         </div>
-
 
         <div class="-translate-y-1/2 absolute lg:ml-0 ml-8 -mt-3">
             <div class="w-32 rounded-full outline-4 outline-gray-100 outline">
@@ -47,11 +39,28 @@
             </div>
         </div>
 
-        <div class="mt-24">
 
-            @if(count($prices) > 1)
-                <div class="text-right text-gray-400 font-bold mb-3">
-                    Subscriptions range {{ $box->priceRange }}
+
+
+
+
+        <div class="flex items-end justify-end mt-8">
+            <a href="{{ $box->website }}" target="_blank" class="pl-5 pr-3 py-1 rounded bg-sky-700 uppercase text-sm font-bold text-white inline-flex items-center hover:bg-sky-900">
+                Visit Website
+                <i class="far fa-link ml-3"></i>
+            </a>
+        </div>
+
+        <div class="mt-16">
+
+            @if (count($prices) > 0)
+                <div class="flex items-center justify-between mb-2">
+                    <div class="text-2xl font-bold">Pricing</div>
+                    @if(count($prices) > 1)
+                        <div class="text-gray-400 font-bold mb-3">
+                            Subscriptions range {{ $box->priceRange }}
+                        </div>
+                    @endif
                 </div>
             @endif
 
@@ -75,10 +84,22 @@
 
                 @endforeach
             </div>
+            <div class="mt-3 text-gray-500 text-right">
+                *Pricing is subject to change.
+            </div>
         </div>
 
 
         <hr class="border-t-[10px] border-dotted w-16 mx-auto mt-16">
+
+        <div class="mt-16 lg:prose-xl prose text-center">
+            <h1 class=" font-bold">
+                {{ $box->name }}
+            </h1>
+            <div class="-mt-12">
+                <h2 class="text-gray-500">{{ $box->short }}</h2>
+            </div>
+        </div>
 
 
         {{--            <a href="{{ $box->website }}" class="pl-3 pr-1 py-1 rounded bg-emerald-700 uppercase text-sm font-bold text-white inline-flex items-center hover:bg-emerald-900">--}}
@@ -92,6 +113,11 @@
 
         <article class="prose mt-16">
             {!! \Illuminate\Support\Str::markdown($box->description) !!}
+            <div class="flex items-center justify-end">
+                <div class="mt-3 text-sm text-gray-500 text-right w-2/3">
+                    * Product descriptions are subject to change and may not align with the views of Crate Catalog.  Additionally, some product descriptions are tweaked to encourage click-through rates for affiliate links.
+                </div>
+            </div>
         </article>
 
 
