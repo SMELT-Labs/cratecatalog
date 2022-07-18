@@ -1,4 +1,9 @@
 @push('head')
+    <x-meta.twitter-seo
+        :title="'Crate Catalog - ' . $box->title"
+        :description="$box->short"
+        :image="$box->logo"
+    />
     <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
     <livewire:styles />
     <x-comments::styles />
@@ -31,7 +36,7 @@
         </div>
 
         <div class="-translate-y-1/2 absolute lg:ml-0 ml-8 -mt-3">
-            <div class="w-32 rounded-full outline-4 outline-gray-100 outline">
+            <div class="w-32 h-32 rounded-full border-4 border-gray-100 border overflow-hidden">
                 <div class="@aspect(1,1) bg-gray-200 rounded-full overflow-hidden ">
                     <img class="object-cover"
                          src="{{ $box->logo }}" alt="">

@@ -55,7 +55,7 @@
                 </div>
             @else
                 <div class="flex items-center ml-3">
-                    <a href="{{ route('login') }}" class="w-10 rounded-full bg-white hover:text-blue-500 @aspect(1,1) relative flex items-center justify-center outline-black outline outline-1" title="Login">
+                    <a href="{{ route('login') }}" class="w-10 h-10 rounded-full bg-white hover:text-blue-500 @aspect(1,1) relative flex items-center justify-center border-black border border-1 overflow-hidden" title="Login">
                         <i class="fas text-xl fa-arrow-right-to-arc absolute flex items-center justify-center"></i>
                     </a>
                 </div>
