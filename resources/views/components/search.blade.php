@@ -11,7 +11,7 @@
                 @isset($_GET['q'])
                 value="{{ $_GET['q'] }}"
                 @endisset
-                class="ais-SearchBox-input w-64 transition-all duration-500 focus:w-full max-w-screen-md rounded-full px-5" type="search"
+                class="ais-SearchBox-input w-56 sm:w-64 transition-all duration-500 focus:w-full max-w-screen-md rounded-full px-5" type="search"
                 placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="none"
                 spellcheck="false" maxlength="512">
 
