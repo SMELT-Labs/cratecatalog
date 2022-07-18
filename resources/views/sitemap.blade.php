@@ -3,7 +3,7 @@
     @foreach(\App\Models\Box::all() as $box)
         <url>
             <loc>{{ route('detail', ['box' => $box]) }}</loc>
-            <lastmod>{{ $box->updated_at }}</lastmod>
+            <lastmod>{{ $box->updated_at->format('Y-m-d') }}</lastmod>
             <changefreq>daily</changefreq>
             <priority>1</priority>
         </url>
