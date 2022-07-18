@@ -56,9 +56,10 @@
             </a>
         </div>
 
+        @if (count($prices) > 0)
         <div class="mt-16">
 
-            @if (count($prices) > 0)
+
                 <div class="flex items-center justify-between mb-2">
                     <div class="text-2xl font-bold">Pricing</div>
                     @if(count($prices) > 1)
@@ -67,7 +68,7 @@
                         </div>
                     @endif
                 </div>
-            @endif
+
 
             <div class="divide-y">
                 @foreach($prices as $price)
@@ -93,6 +94,8 @@
                 *Pricing is subject to change.
             </div>
         </div>
+
+        @endif
 
 
         <hr class="border-t-[10px] border-dotted w-16 mx-auto mt-16">
