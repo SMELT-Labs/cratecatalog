@@ -20,6 +20,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
+use Spatie\TagsField\Tags;
 
 class Box extends Resource
 {
@@ -94,6 +95,11 @@ class Box extends Resource
             ]),
 
             Panel::make('Details', [
+                Tags::make('Tags')
+                    ->help('Press enter to set tag')
+                    ->withMeta([
+                        "placeholder" => "Add tags... Press [enter] to set tags."
+                    ]),
                 URL::make('RSS')
                     ->hideFromIndex()
                     ->help("A direct link an RSS feed to display company updates."),

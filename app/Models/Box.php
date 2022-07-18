@@ -13,13 +13,15 @@ use Laravel\Scout\Searchable;
 use Spatie\Comments\Models\Concerns\HasComments;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Tags\HasTags;
 
 class Box extends Model
 {
-    use HasFactory, HasComments, Searchable, HasSlug, HasPrices;
+    use HasFactory, HasComments, Searchable, HasSlug, HasPrices, HasTags;
 
     protected $appends = [
         "detail",
+        "categories"
     ];
 
     protected $fillable = [
@@ -34,7 +36,8 @@ class Box extends Model
         "short",
         "header",
         "logo",
-        "detail"
+        "detail",
+        "categories"
     ];
 
     public function getSlugOptions() : SlugOptions
@@ -107,6 +110,10 @@ class Box extends Model
 
     public function getDetailAttribute() {
         return route('detail', ["box" => $this]);
+    }
+
+    public function getCategoriesAttribute() {
+        return $this->tags->pluck("name")->join(",");
     }
 
     public function toArray()

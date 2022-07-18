@@ -31,7 +31,7 @@ class Spacer extends Component
         $this->offsetX = $this->gapX * -1;
         $this->offsetY = $this->gapY * -1;
         $this->colClass = $colClass ?? "w-1/3";
-        $this->wrapperClass = $wrapperClass ?? "justify-between";
+        $this->wrapperClass = $wrapperClass ?? "justify-start";
     }
 
     public function dom() {
