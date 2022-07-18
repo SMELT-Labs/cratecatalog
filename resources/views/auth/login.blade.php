@@ -59,5 +59,11 @@
                 </x-button>
             </div>
         </form>
+        <x-slot name="footer">
+            <div class="mt-3">
+                <span>Need an account?</span>
+                <a href="{{ route('register') }}" class="text-gray-700 underline">Sign Up</a>
+            </div>
+        </x-slot>
     </x-auth-card>
 </x-guest-layout>

@@ -1,9 +1,14 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+
+            <div class="flex items-center justify-center">
+                <a href="/" class="block">
+                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                </a>
+            </div>
+
+            <x-inline-login />
         </x-slot>
 
         <!-- Validation Errors -->
@@ -46,14 +51,23 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+{{--                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">--}}
+{{--                    {{ __('Already registered?') }}--}}
+{{--                </a>--}}
 
                 <x-button class="ml-4">
                     {{ __('Register') }}
                 </x-button>
             </div>
         </form>
+
+        <x-slot name="footer">
+            <div class="mt-3">
+                <span>Already Registered?</span>
+                <a href="{{ route('login') }}" class="text-gray-700 underline">
+                    Login
+                </a>
+            </div>
+        </x-slot>
     </x-auth-card>
 </x-guest-layout>
