@@ -45,5 +45,9 @@ Route::get('/template/{name}', function($name) {
     return view("templates.$name", ["template" => $name]);
 });
 
+Route::get('/sitemap.xml', function () {
+    return view('sitemap');
+});
+
 require __DIR__.'/auth.php';
 require __DIR__.'/oauth.php';
