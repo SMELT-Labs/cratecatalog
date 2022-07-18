@@ -1,5 +1,6 @@
 <x-meta.tracking.ga4 />
 <x-meta.web-app-friendly />
+<x-meta.mobile-friendly />
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
