@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex items-center flex-grow">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center mr-3">
                     <a href="{{ route(config('navigation.home')) }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>

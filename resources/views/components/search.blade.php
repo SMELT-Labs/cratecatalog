@@ -4,7 +4,7 @@
 
 <div id="searchbox" class="flex-grow">
     <div class="ais-SearchBox flex-grow">
-        <form action="/search" role="search" class="ais-SearchBox-form flex items-center m-0 justify-end mr-6 md:mr-0 relative" novalidate="">
+        <form action="/search" role="search" class="ais-SearchBox-form flex items-center m-0 justify-end relative" novalidate="">
 
             <input
                 name="q"
