@@ -27,6 +27,10 @@ trait HasPrices  {
         return $this->morphMany(Price::class, 'priceable');
     }
 
+    public function getHasPricesAttribute() {
+        return  $this->prices->count() > 0;
+    }
+
     public function getPriceCountAttribute() {
         return  $this->prices->count();
     }

@@ -29,7 +29,11 @@ Route::get('/dashboard-redirect', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/box/{box}', function (\App\Models\Box $box) {
-    return view('detail', ['box' => $box]);
+    $prices = $box->prices()->orderByDesc('price')->get();
+    return view('detail', [
+        'box' => $box,
+        'prices' => $prices
+    ]);
 })->name('detail');
 
 Route::get('/template/{name}', function($name) {

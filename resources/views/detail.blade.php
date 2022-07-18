@@ -47,25 +47,34 @@
             </div>
         </div>
 
-        <div class="mt-24 divide-y">
-            @foreach($box->prices as $price)
+        <div class="mt-24">
 
-                <div class="flex items-center justify-between py-3">
-                    <div>
-                        <div class="font-bold">
-                            {{ $price->name }}
-                        </div>
-                        <div>
-                            {{ $price->short }}
-                        </div>
-                    </div>
-
-                    <div class="font-bold">
-                        {{ $price->formatted }}
-                    </div>
+            @if(count($prices) > 1)
+                <div class="text-right text-gray-400 font-bold mb-3">
+                    Subscriptions range {{ $box->priceRange }}
                 </div>
+            @endif
 
-            @endforeach
+            <div class="divide-y">
+                @foreach($prices as $price)
+
+                    <div class="flex items-center justify-between py-3">
+                        <div>
+                            <div class="font-bold">
+                                {{ $price->name }}
+                            </div>
+                            <div>
+                                {{ $price->short }}
+                            </div>
+                        </div>
+
+                        <div class="font-bold">
+                            {{ $price->formatted }}
+                        </div>
+                    </div>
+
+                @endforeach
+            </div>
         </div>
 
 
