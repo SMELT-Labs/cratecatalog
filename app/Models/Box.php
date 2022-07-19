@@ -90,11 +90,11 @@ class Box extends Model
     }
 
     public function header() : Attribute {
-        return $this->imgixCast('header', 450, 300);
+        return $this->storageCast('header');
     }
 
     public function logo() : Attribute {
-        return $this->imgixCast('logo', 100, 100);
+        return $this->storageCast('logo');
     }
 
 //    public function price() : Attribute {

@@ -51,7 +51,6 @@ function imgix($image, $settings = [])
 function scaleImage($image, $dpr, $settings = [])
 {
     $settings = array_merge(getDefaultImageSettings(), $settings);
-
     return imgixUrl($image, array_merge(
         $settings,
         ['dpr' => $dpr]
@@ -68,7 +67,7 @@ function scaleImages($image, $amount = 3, $settings = [])
     return $srcset;
 }
 
-function imageSrcSet($image, $amount = 3, $settings = [])
+function imageSrcSet($image, $settings = [], $amount = 4)
 {
     $images = scaleImages($image, $amount, $settings);
 
