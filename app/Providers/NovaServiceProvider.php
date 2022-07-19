@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Nova\Box;
 use App\Nova\Comment;
+use App\Nova\Dashboards\Main;
 use App\Nova\Permission;
 use App\Nova\Price;
 use App\Nova\Role;
@@ -29,6 +30,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         parent::boot();
         Nova::mainMenu(function (Request $request) {
             return [
+                MenuSection::dashboard(Main::class)->icon('view-grid'),
                 MenuSection::make('Admin', [
                     MenuItem::resource(User::class),
                     MenuItem::resource(Role::class),

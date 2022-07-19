@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\ApproveComment;
 use App\Nova\Actions\RejectComment;
+use App\Nova\Metrics\NewComments;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Laravel\Nova\Fields\BelongsTo;
@@ -112,7 +113,9 @@ class Comment extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+            NewComments::make()
+        ];
     }
 
     /**

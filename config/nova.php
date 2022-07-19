@@ -111,6 +111,13 @@ return [
         Authorize::class,
     ],
 
+    'routes' => [
+        'login' => '/login',
+        'logout' => '/logout',
+        'forgot_password' => '/forgot-password',
+        'reset_password' => '/reset-password'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Nova Pagination Type

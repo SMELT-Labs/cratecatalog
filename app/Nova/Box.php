@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\NewBoxesPerDay;
+use App\Nova\Metrics\NewBoxesProgress;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -120,7 +122,10 @@ class Box extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+            NewBoxesProgress::make(),
+            NewBoxesPerDay::make(),
+        ];
     }
 
     /**
