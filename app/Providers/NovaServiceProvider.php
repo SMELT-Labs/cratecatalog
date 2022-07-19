@@ -9,6 +9,7 @@ use App\Nova\Permission;
 use App\Nova\Price;
 use App\Nova\Role;
 use App\Nova\User;
+use Illuminate\Foundation\Vite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -28,6 +29,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+        Nova::style('nova-extra', asset('css/nova-extra.css'));
         Nova::mainMenu(function (Request $request) {
             return [
                 MenuSection::dashboard(Main::class)->icon('view-grid'),

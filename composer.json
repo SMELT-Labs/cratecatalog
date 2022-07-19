@@ -17,6 +17,7 @@
     "require": {
         "php": "^8.0.2",
         "creativeorange/gravatar": "^1.0",
+        "dinandmentink/nova-markdown": "^4.1",
         "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.2",
         "http-interop/http-factory-guzzle": "^1.2",

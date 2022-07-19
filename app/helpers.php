@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 function aspect($width, $height=null)
 {
     $height = $height ?? $width;
@@ -75,3 +77,7 @@ function imageSrcSet($image, $amount = 3, $settings = [])
     }, $images, array_keys($images)));
 }
 
+function nova_path(\Illuminate\Database\Eloquent\Model $model, $page="") {
+    $resource = Str::of(class_basename($model))->lower()->plural();
+    return config('nova.path') . '/resources/' . $resource . '/' . $model->id . '/' . $page;
+}

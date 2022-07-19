@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Metrics\NewBoxesPerDay;
 use App\Nova\Metrics\NewBoxesProgress;
+use DinandMentink\Markdown\Markdown;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -12,7 +13,7 @@ use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\Markdown as DefaultMarkdown;
 use Laravel\Nova\Fields\MorphedByMany;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\MorphToMany;
@@ -86,6 +87,7 @@ class Box extends Resource
 
                 Markdown::make('Description')
                     ->help("A detailed description of the box and related information.")
+                    ->uploads()
                     ->required(),
 
                 URL::make('Website')

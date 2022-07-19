@@ -54,6 +54,12 @@
                 Visit Website
                 <i class="far fa-link ml-3"></i>
             </a>
+            @can('edit_boxes')
+                <a href="{{ nova_path($box, "edit") }}" target="_blank" class="pl-5 pr-3 py-1 rounded bg-red-700 uppercase text-sm font-bold text-white inline-flex items-center hover:bg-red-900 ml-3">
+                    Edit
+                    <i class="far fa-pencil ml-3"></i>
+                </a>
+            @endcan
         </div>
 
         @if (count($prices) > 0)
