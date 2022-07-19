@@ -31,7 +31,7 @@
         <div class="lg:-mx-16 mx-0">
             <div class="mt-8 w-full rounded-[2rem] overflow-hidden @aspect(4,2) bg-gray-200 relative">
                 <img class="object-cover" src="{{ $box->header }}" alt="">
-                <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.25)] to-transparent"></div>
             </div>
         </div>
 
