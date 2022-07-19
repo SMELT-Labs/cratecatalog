@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Laravel\Cashier\Cashier;
+use Laravel\Nova\Actions\Actionable;
 use Laravel\Scout\Searchable;
 use Spatie\Comments\Models\Concerns\HasComments;
 use Spatie\Sluggable\HasSlug;
@@ -17,7 +18,7 @@ use Spatie\Tags\HasTags;
 
 class Box extends Model
 {
-    use HasFactory, HasComments, Searchable, HasSlug, HasPrices, HasTags;
+    use HasFactory, HasComments, Searchable, HasSlug, HasPrices, HasTags, Actionable;
 
     protected $appends = [
         "detail",
