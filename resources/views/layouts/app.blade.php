@@ -1,3 +1,4 @@
+<!doctype html>
 <html class="bg-gray-100" lang="en">
 {{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
     <head>
