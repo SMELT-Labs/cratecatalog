@@ -18,6 +18,7 @@
         "php": "^8.0.2",
         "creativeorange/gravatar": "^1.0",
         "dinandmentink/nova-markdown": "^4.1",
+        "erusev/parsedown": "^1.7",
         "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.2",
         "http-interop/http-factory-guzzle": "^1.2",

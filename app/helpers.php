@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
+use Lib\Markdown\ExtendedMarkdown;
 
 function aspect($width, $height=null)
 {
@@ -79,4 +80,12 @@ function imageSrcSet($image, $settings = [], $amount = 4)
 function nova_path(\Illuminate\Database\Eloquent\Model $model, $page="") {
     $resource = Str::of(class_basename($model))->lower()->plural();
     return config('nova.path') . '/resources/' . $resource . '/' . $model->id . '/' . $page;
+}
+
+function markdown($text)
+{
+    $p = new ExtendedMarkdown();
+    $removedDuplicateLines = implode("\n", array_filter(explode("\n", $text)));
+
+    return $p->setSafeMode(true)->parse($removedDuplicateLines);
 }

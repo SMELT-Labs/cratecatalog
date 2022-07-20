@@ -126,7 +126,7 @@
         {{--            </a>--}}
 
         <article class="prose mt-16">
-            {!! \Illuminate\Support\Str::markdown($box->description) !!}
+            {!! markdown($box->description) !!}
             <div class="flex items-center justify-end">
                 <div class="mt-3 text-sm text-gray-500 text-right w-2/3">
                     * Product descriptions are subject to change and may not align with the views of Crate Catalog.  Additionally, some product descriptions are tweaked to encourage click-through rates for affiliate links.
