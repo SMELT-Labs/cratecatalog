@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BoxController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -28,14 +29,10 @@ Route::get('/dashboard-redirect', function () {
 //    return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/boxes/{box}', function (\App\Models\Box $box) {
-    $prices = $box->prices()->orderByDesc('price')->get();
-    $box->interact('view');
-    return view('detail', [
-        'box' => $box,
-        'prices' => $prices
-    ]);
-})->name('detail');
+Route::get('/boxes/{box}', [BoxController::class, 'showDetail'])->name('detail');
+Route::get('/crates/{box}', [BoxController::class, 'showDetail'])->name('detail.2');
+Route::get('/box/{box}', [BoxController::class, 'showDetail'])->name('detail.3');
+Route::get('/crate/{box}', [BoxController::class, 'showDetail'])->name('detail.4');
 
 Route::get('/template/{name}', function($name) {
 //    session()->flash('template', $name);

@@ -8,5 +8,13 @@
             <changefreq>daily</changefreq>
             <priority>1</priority>
         </url>
+        @for($i = 2; $i < 4; $i++)
+            <url>
+                <loc>{{ route("detail.$i", ['box' => $box]) }}</loc>
+                <lastmod>{{ $box->updated_at->format('Y-m-d') }}</lastmod>
+                <changefreq>daily</changefreq>
+                <priority>0</priority>
+            </url>
+        @endfor
     @endforeach
 </urlset>
