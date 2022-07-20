@@ -1,6 +1,6 @@
 @push('head')
     <x-meta.twitter-seo
-        :title="'Crate Catalog - ' . $box->title"
+        :title="'Crate Catalog - ' . $box->name"
         :description="$box->short"
         :image="$box->logo"
     />

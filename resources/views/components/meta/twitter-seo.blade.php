@@ -1,7 +1,12 @@
 @isset($title)
     <x-meta.og.title :title="$title" />
-    <title>{{ $title }}</title>
+    @section('title')
+        <title>{{ $title }}</title>
+    @endsection
 @endisset
+
+
+
 
 <x-meta.og.type :type="$type ?? 'article'" />
 <x-meta.og.url :url="$url ?? url()->current()" />
