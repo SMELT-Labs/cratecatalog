@@ -28,7 +28,7 @@ Route::get('/dashboard-redirect', function () {
 //    return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/box/{box}', function (\App\Models\Box $box) {
+Route::get('/boxes/{box}', function (\App\Models\Box $box) {
     $prices = $box->prices()->orderByDesc('price')->get();
     $box->interact('view');
     return view('detail', [
