@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\Interaction;
+use App\Listeners\ViewListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -26,6 +28,9 @@ class EventServiceProvider extends ServiceProvider
             \SocialiteProviders\Google\GoogleExtendSocialite::class.'@handle',
             \SocialiteProviders\Twitter\TwitterExtendSocialite::class.'@handle',
         ],
+        Interaction::class => [
+            ViewListener::class
+        ]
     ];
 
     /**

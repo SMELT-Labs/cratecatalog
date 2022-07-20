@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dad2c4f0f5bb493a7f91ff790a131f01",
+    "content-hash": "8fd9e08e028166e87efcab12739425e2",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -7141,6 +7141,84 @@
                 }
             ],
             "time": "2022-03-28T11:21:33+00:00"
+        },
+        {
+            "name": "spatie/laravel-stats",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-stats.git",
+                "reference": "39b9dbcbfea4f64468c82e575ae2d1e78f878354"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-stats/zipball/39b9dbcbfea4f64468c82e575ae2d1e78f878354",
+                "reference": "39b9dbcbfea4f64468c82e575ae2d1e78f878354",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.73|^9.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^3.3",
+                "orchestra/testbench": "^6.23|^7.0",
+                "phpunit/phpunit": "^9.4",
+                "vimeo/psalm": "^4.12"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Stats\\StatsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Stats\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Track application stat changes over time",
+            "homepage": "https://github.com/spatie/laravel-stats",
+            "keywords": [
+                "laravel-stats",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-stats/issues",
+                "source": "https://github.com/spatie/laravel-stats/tree/2.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/spatie",
+                    "type": "github"
+                },
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "other"
+                }
+            ],
+            "time": "2022-06-01T07:11:29+00:00"
         },
         {
             "name": "spatie/laravel-tags",

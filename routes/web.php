@@ -30,6 +30,7 @@ Route::get('/dashboard-redirect', function () {
 
 Route::get('/box/{box}', function (\App\Models\Box $box) {
     $prices = $box->prices()->orderByDesc('price')->get();
+    $box->interact('view');
     return view('detail', [
         'box' => $box,
         'prices' => $prices

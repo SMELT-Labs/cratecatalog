@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Traits\HasPrices;
+use App\Traits\Interactive;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,11 +15,21 @@ use Laravel\Scout\Searchable;
 use Spatie\Comments\Models\Concerns\HasComments;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Stats\StatsWriter;
+use Spatie\Stats\Traits\HasStats;
 use Spatie\Tags\HasTags;
 
 class Box extends Model
 {
-    use HasFactory, HasComments, Searchable, HasSlug, HasPrices, HasTags, Actionable;
+    use HasFactory,
+        HasComments,
+        Searchable,
+        HasSlug,
+        HasPrices,
+        HasTags,
+        Actionable,
+        Interactive,
+        HasStats;
 
     protected $appends = [
         "detail",
@@ -43,6 +54,7 @@ class Box extends Model
 
     public function getSlugOptions() : SlugOptions
     {
+        $a = StatsWriter::class;
         return SlugOptions::create()
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug')

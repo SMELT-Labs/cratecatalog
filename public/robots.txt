@@ -1,2 +1,4 @@
-User-agent: *
-Disallow:
+User-Agent: *
+Disallow: /dashboard/
+
+Sitemap: https://cratecatalog.com/sitemap.xml

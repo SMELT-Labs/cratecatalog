@@ -42,6 +42,7 @@
         "spatie/laravel-markdown": "^2.2",
         "spatie/laravel-permission": "^5.5",
         "spatie/laravel-sluggable": "^3.4",
+        "spatie/laravel-stats": "^2.0",
         "spatie/laravel-tags": "^4.3",
         "spatie/nova-tags-field": "^4.0",
         "symfony/process": "^6.1",
