@@ -1,5 +1,6 @@
 @isset($title)
     <x-meta.og.title :title="$title" />
+    <title>{{ $title }}</title>
 @endisset
 
 <x-meta.og.type :type="$type ?? 'article'" />
