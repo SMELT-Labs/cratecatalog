@@ -8,6 +8,11 @@ use Laravel\Nova\Metrics\Progress;
 
 class NewBoxesProgress extends Progress
 {
+    public function name()
+    {
+        return "Box Goal (Sprint #1)";
+    }
+
     /**
      * Calculate the value of the metric.
      *
@@ -18,7 +23,7 @@ class NewBoxesProgress extends Progress
     {
         return $this->count($request, Box::class, function ($query) {
             return $query;
-        }, target: 100);
+        }, target: 50)->suffix("out of 50");
     }
 
     /**
